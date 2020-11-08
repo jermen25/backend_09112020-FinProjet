@@ -45,9 +45,14 @@ app.use((error, req, res, next) => {
     res.json({ message: error.message || 'Une erreur non gérée est survenue' })
 });
 
+/******************************************************************************************* */
+/******************************************************************************************* */
+//Penser à remplacer la connectionString ci-dessous avec vos propres identifiants MongoDB
+/******************************************************************************************* */
+/******************************************************************************************* */
 
 mongoose
-.connect(`mongodb+srv://greta_user:WMzkhQoKYrBrWbxe@cluster0.ncwlp.mongodb.net/Greta?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true, useUnifiedTopology: true })
+.connect( `mongodb+srv://mongoUtilisateur:mongoMdp@monServeurPerso.mongodb.net/NomBaseDeDonnees?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true, useUnifiedTopology: true })
   .then(() => {
     app.listen(5000);
   })
